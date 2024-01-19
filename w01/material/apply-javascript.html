@@ -1,0 +1,22 @@
+<button type="button">Player 1: Chris</button>
+<button type="button">Player 2: Candy</button>
+<script>
+    // JavaScript goes here
+    document.addEventListener("DOMContentLoaded", () => {
+        function createParagraph() {
+            const para = document.createElement("p");
+            para.textContent = "You clicked the button!";
+            document.body.appendChild(para);
+        }
+
+        const buttons = document.querySelectorAll("button");
+
+        for (const button of buttons) {
+            button.addEventListener("click", createParagraph);
+        }
+    });
+
+    document.querySelector("html").addEventListener("click", () => {
+        alert("Ouch! Stop poking me!");
+    });
+</script>
