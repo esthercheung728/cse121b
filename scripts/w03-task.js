@@ -93,29 +93,29 @@ document.querySelector('#getTotal').addEventListener('click', function () {
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
 const array = Array.from({ length: 13 }, (_, index) => index + 1);
-document.getElementById('array').textContent = array.join(', ');
+document.querySelector('#array').textContent = array.join(', ');
 
 
 /* Output Odds Only Array */
 const oddNumbers = array.filter(number => number % 2 !== 0);
-document.getElementById('odds').textContent = oddNumbers.join(', ');
+document.querySelector('#odds').textContent = oddNumbers.join(', ');
 
 
 /* Output Evens Only Array */
 const evenNumbers = array.filter(number => number % 2 === 0);
-document.getElementById('evens').textContent = evenNumbers.join(', ');
+document.querySelector('#evens').textContent = evenNumbers.join(', ');
 
 
 /* Output Sum of Org. Array */
 const sumOfArray = array.reduce((accumulator, currentValue) => accumulator + currentValue);
-document.getElementById('sumOfArray').textContent = sumOfArray;
+document.querySelector('#sumOfArray').textContent = sumOfArray;
 
 
 /* Output Multiplied by 2 Array */
 const multiplied = array.map(number => number * 2);
-document.getElementById('multiplied').textContent = multiplied.join(', ');
+document.querySelector('#multiplied').textContent = multiplied.join(', ');
 
 
 /* Output Sum of Multiplied by 2 Array */
 const sumOfMultiplied = multiplied.reduce((accumulator, currentValue) => accumulator + currentValue);
-document.getElementById('sumOfMultiplied').textContent = sumOfMultiplied;
+document.querySelector('#sumOfMultiplied').textContent = sumOfMultiplied;
