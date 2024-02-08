@@ -40,7 +40,6 @@ const getTemples = async () => {
 };
 
 
-// console.log(templeList)
 
 /* reset Function */
 const reset = () => {
