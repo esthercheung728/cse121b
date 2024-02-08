@@ -47,7 +47,29 @@ const reset = () => {
 };
 
 /* filterTemples Function */
-const filterTemples = () => {
+// const filterTemples = () => {
+//     reset();
+//     const filter = document.querySelector('#filtered').value;
+
+//     switch (filter) {
+//         case 'utah':
+//             displayTemples(templeList.filter(temple => temple.location.includes('Utah')));
+//             break;
+//         case 'notutah':
+//             displayTemples(templeList.filter(temple => !temple.location.includes('Utah')));
+//             break;
+//         case 'older':
+//             displayTemples(templeList.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
+//             break;
+//         case 'all':
+//         default:
+//             displayTemples(templeList);
+//             break;
+//     }
+// };
+
+
+const sortBy = () => {
     reset();
     const filter = document.querySelector('#filtered').value;
 
@@ -68,10 +90,11 @@ const filterTemples = () => {
     }
 };
 
-
 getTemples();
 
 /* Event Listener */
-const filteredElement = document.querySelector('#filtered').addEventListener('change', () => {
-    filterTemples(templeList);
-});
+// const filteredElement = document.querySelector('#filtered').addEventListener('change', () => {
+//     filterTemples(templeList);
+// });
+
+const filteredElement = document.querySelector('#filtered').addEventListener('change', sortBy);
