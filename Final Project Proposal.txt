@@ -1,0 +1,17 @@
+Final project proposal for restaurant menu webpage
+
+What will be built?
+I would like to create a restaurant menu that will serve as an interactive platform for customers to access detailed information about the dishes and beverages offered by the restaurant. 
+
+What will it do?
+The webpage will be designed with a user-friendly interface just like the temple list. Customers will be able to filter menu items. For example, all items, breakfast, lunch, shakes and dinner. It will help them find their desired dishes quickly.
+
+What will be the source of your external data?
+Firstly, I will use the existing data that the restaurant already maintains, such as the current menu, item descriptions, and prices. Secondly, I plan to develop the restaurant menu webpage using HTML, CSS, and JavaScript.
+This website will be fun and good practice for me to apply the skill set of JavaScript.
+The below function will be applied to the webpage.
+	arrays
+	objects
+	forEach()
+	DOMContentLoaded
+	map, reduce, and filter

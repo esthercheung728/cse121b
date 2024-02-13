@@ -3,7 +3,7 @@
 /* Declare and initialize global variables */
 
 // Declare const variable and reference the HTML div 'temples'
-const templesElement = document.querySelector('#temples');
+const templesElement = document.getElementById('temples');
 let templeList = [];
 
 /* async displayTemples Function */
@@ -32,7 +32,8 @@ const displayTemples = (temples) => {
 const getTemples = async () => {
     try {
         const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
-        templeList = await response.json();
+        if (response.ok) { templeList = await response.json() }
+        // templeList = await response.json();
         displayTemples(templeList);
     } catch (error) {
         console.error("Error fetching temple data:", error);
@@ -41,39 +42,22 @@ const getTemples = async () => {
 
 
 
+
 /* reset Function */
-const reset = () => {
-    templesElement.innerHTML = '';
-};
+// const reset = () => {
+//     templesElement.innerHTML = '';
+// };
+
+const reset = () => templesElement.replaceChildren();
 
 /* filterTemples Function */
-// const filterTemples = () => {
-//     reset();
-//     const filter = document.querySelector('#filtered').value;
-
-//     switch (filter) {
-//         case 'utah':
-//             displayTemples(templeList.filter(temple => temple.location.includes('Utah')));
-//             break;
-//         case 'notutah':
-//             displayTemples(templeList.filter(temple => !temple.location.includes('Utah')));
-//             break;
-//         case 'older':
-//             displayTemples(templeList.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
-//             break;
-//         case 'all':
-//         default:
-//             displayTemples(templeList);
-//             break;
-//     }
-// };
 
 
 const sortBy = () => {
     reset();
-    const filter = document.querySelector('#filtered').value;
+    const filter = document.getElementById("filtered");
 
-    switch (filter) {
+    switch (filter.value) {
         case 'utah':
             displayTemples(templeList.filter(temple => temple.location.includes('Utah')));
             break;
