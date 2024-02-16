@@ -69,7 +69,7 @@
         "category": "snack",
         "price": "68",
         "img": "./images/shrimp.jpg",
-        "desc": "Raw shrimp served with a fiery dressing. The dressing should be on the far edge of your spice tolerance, because, as with every good Thai dish, the "hot" element is balanced by the sour, salty, and sweet flavors.",
+        "desc": "Raw shrimp served with a fiery dressing. The dressing should be on the far edge of your spice tolerance, because, as with every good Thai dish, the hot element is balanced by the sour, salty, and sweet flavors.",
     },
     {
         "id": "10",
@@ -143,5 +143,4 @@
         "img": "./images/duck.jpg",
         "desc": "The Peking Duck Pizza is a new flavor of sourdough pizza, made with confit duck, hoisin sauce, mozzarella cheese, shallots, etc.",
     },
-];
-
+]
