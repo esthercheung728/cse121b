@@ -2,7 +2,7 @@
 
 /* Declare and initialize global variables */
 
-// Declare const variable and reference the HTML div 'menu'
+// Declare const variable and reference the HTML div 'restaurantMenu'
 const menuElement = document.getElementById('restaurantMenu');
 let menuList = [];
 
@@ -31,7 +31,7 @@ const displayMenu = (restaurantMenu) => {
 
 const getMenu = async () => {
     try {
-        const response = await fetch("https://esthercheung728.github.io/cse121b/images/menu.json");
+        const response = await fetch("https://esthercheung728.github.io/cse121b/images/restaurantMenu.json");
         if (response.ok) { menuList = await response.json() }
         // menuList = await response.json();
         displayMenu(menuList);
