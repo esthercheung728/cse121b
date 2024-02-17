@@ -16,11 +16,20 @@ const displayMenu = (restaurantMenu) => {
         h3.textContent = menus.title;
 
         const img = document.createElement('img');
-        img.src = menus.imageUrl;
-        img.alt = menus.category;
+        img.src = menus.img;
+        img.alt = menus.title;
+
+        const p = document.createElement('p');
+        p.textContent = menus.desc;
+
+        const price = document.createElement('div');
+        price.classList.add('price');
+        price.textContent = `$${menus.price}`;
 
         article.appendChild(h3);
         article.appendChild(img);
+        article.appendChild(p);
+        article.appendChild(price);
 
         menuElement.appendChild(article);
     });
@@ -31,57 +40,47 @@ const displayMenu = (restaurantMenu) => {
 
 const getMenu = async () => {
     try {
-        const response = await fetch("https://esthercheung728.github.io/cse121b/images/restaurantMenu.json");
+        const response = await fetch("https://raw.githubusercontent.com/esthercheung728/cse121b/main/images/restaurantMenu.json");
         if (response.ok) { menuList = await response.json() }
-        // menuList = await response.json();
         displayMenu(menuList);
     } catch (error) {
         console.error("Error fetching menu data:", error);
     }
 };
 
-
-
-
 /* reset Function */
-// const reset = () => {
-//     menuElement.innerHTML = '';
-// };
-
 const reset = () => menuElement.replaceChildren();
 
 /* filterMenu Function */
-
-
 const sortBy = () => {
     reset();
     const filter = document.getElementById("filtered");
 
     switch (filter.value) {
         case 'pasta':
-            displayMenu(menuList.filter(menu => menus.category.includes('Pasta')));
+            displayMenu(menuList.filter(menu => menu.category === 'pasta'));
             break;
         case 'salad':
-            displayMenu(menuList.filter(menu => menus.category.includes('Salad')));
+            displayMenu(menuList.filter(menu => menu.category === 'salad'));
             break;
         case 'snack':
-            displayMenu(menuList.filter(menu => menus.category.includes('Snack')));
+            displayMenu(menuList.filter(menu => menu.category === 'snack'));
             break;
         case 'rice':
-            displayMenu(menuList.filter(menu => menus.category.includes('Rice')));
+            displayMenu(menuList.filter(menu => menu.category === 'rice'));
             break;
         case 'burger':
-            displayMenu(menuList.filter(menu => menus.category.includes('Burger')));
+            displayMenu(menuList.filter(menu => menu.category === 'burger'));
             break;
         case 'pizza':
-            displayMenu(menuList.filter(menu => menus.category.includes('Pizza')));
+            displayMenu(menuList.filter(menu => menu.category === 'pizza'));
             break;
         case 'dessert':
-            displayMenu(menuList.filter(menu => menus.category.includes('Dessert')));
-        case 'drinks':
-            displayMenu(menuList.filter(menu => menus.category.includes('Drinks')));
+            displayMenu(menuList.filter(menu => menu.category === 'dessert'));
             break;
-
+        case 'drinks':
+            displayMenu(menuList.filter(menu => menu.category === 'drinks'));
+            break;
         case 'all':
         default:
             displayMenu(menuList);
