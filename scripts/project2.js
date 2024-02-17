@@ -102,7 +102,7 @@ const btnContainer = document.querySelector(".btn-container");
 
 // display all items when page loads
 window.addEventListener("DOMContentLoaded", function () {
-    fetch("https://esthercheung728.github.io/cse121b/images/restaurantMenu.json")
+    fetch("https://esthercheung728.github.io/cse121b/restaurantMenu.json")
         .then(function (response) {
             if (!response.ok) {
                 throw new Error("Network response was not ok");
