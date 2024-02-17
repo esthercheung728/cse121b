@@ -163,10 +163,18 @@ const getMenu = async () => {
     );
     if (response.ok) {
         menuList = await response.json();
+        displayMenus(menuList);
     }
-    displayMenus(menuList);
 };
 
+let jsonString = `https://esthercheung728.github.io/cse121b/restaurantMenu.json`; // Replace this with your JSON string
+
+try {
+    JSON.parse(jsonString);
+    console.log("Valid JSON");
+} catch (error) {
+    console.error("Invalid JSON", error);
+}
 /* Step 6 reset Function */
 const reset = () => menuElement.replaceChildren();
 

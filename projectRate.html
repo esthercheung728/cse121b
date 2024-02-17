@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 121b | W06: Project - Hibor Rate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/projectRate.css">
+
+    <style>
+        body {
+            background-image: url("images/background.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a id="toggleMenu">&equiv;</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="w01-task.html">W1 Task</a></li>
+            <li><a href="w03-task.html">W3 Task</a></li>
+            <li><a href="w04-task.html">W4 Task</a></li>
+            <li><a href="w05-task.html" class="active">W5 Task</a></li>
+            <li><a href="project.html">Project</a></li>
+        </ul>
+    </nav>
+    <!-- title -->
+    <div class="title">
+        <h2>HIBOR Rate Table</h2>
+        <div class="underline"></div>
+    </div>
+    <table id="hiborTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Overnight</th>
+                <th>1 Week</th>
+                <th>1 Month</th>
+                <th>3 Months</th>
+                <th>6 Months</th>
+                <th>9 Months</th>
+                <th>12 Months</th>
+            </tr>
+        </thead>
+        <tbody id="hiborData"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+
+
+    <footer>
+        &copy;<span id="year"></span> | Week 06 - Project - Hibor Rate | CSE 121b
+    </footer>
+    <script src="scripts/projectRate.js"></script>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+    <!-- <script src="scripts/project.js"></script> -->
+</body>
+
+</html>
