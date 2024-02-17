@@ -16,13 +16,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 row.appendChild(dateCell);
 
                 // Iterate over the interest rates and create table cells
-                for (const key in record) {
+                Object.keys(record).forEach(key => {
                     if (key.startsWith('ir_')) {
                         const rateCell = document.createElement('td');
                         rateCell.textContent = record[key] !== null ? record[key].toFixed(5) : 'N/A';
                         row.appendChild(rateCell);
                     }
-                }
+                });
 
                 hiborData.appendChild(row);
             });
